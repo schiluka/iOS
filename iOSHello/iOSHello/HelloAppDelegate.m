@@ -1,18 +1,24 @@
 //
-//  AppDelegate.m
-//  HelloWorld
+//  HelloAppDelegate.m
+//  iOSHello
 //
-//  Created by Santhosh Chiluka on 8/31/13.
+//  Created by Santhosh Chiluka on 9/21/13.
 //  Copyright (c) 2013 Santhosh Chiluka. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "HelloAppDelegate.h"
 
-@implementation AppDelegate
+#import "HelloViewController.h"
+
+@implementation HelloAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.viewController = [[HelloViewController alloc] initWithNibName:@"HelloViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
